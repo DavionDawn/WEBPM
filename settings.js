@@ -6,8 +6,8 @@ var settings = {
     databaseHost: "127.0.0.1", //192.168.122.20
     databasePort: 3306, //3306
     databaseUserName: "root", // root
-    databasePassword: "dekvn@123321", // dekvn@123321 or root
-    databaseName: "DCC2", // dcc_development, DCC2, DCC_test
+    databasePassword: "root", // dekvn@123321 or root
+    databaseName: "LocalDB", // dcc_development, DCC2, DCC_test
 
     /**       
     *---------- LDAP SERVER CONFIG ------------

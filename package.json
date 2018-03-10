@@ -1,16 +1,12 @@
 {
-  "name": "dcc",
+  "name": "webpm",
   "version": "1.0.0",
-  "description": "DEK Competence Center",
+  "description": "Web-based PM",
   "main": "app.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "start": "gulp",
-    "test": "mocha"
+    "start": "gulp"
   },
-  "author": "DEK-Interns",
+  "author": "Davion",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
