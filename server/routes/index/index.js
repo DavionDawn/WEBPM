@@ -3,11 +3,8 @@ var router = express.Router();
 var gcal = require('../../config/google_api/gcal.js');
 var log = require('../../config/config')["log"];
 var Sequelize = require('sequelize');
-var ldap = require('ldapjs');
 var models = require('../../models');
 var passport = require('passport');
-var LdapStrategy = require('passport-ldapauth').Strategy;
-// admin's credentials for connecting to openLDAP server
 var BASE_OPTS = require("../../config/config");
 var md5 = require('md5');
 
@@ -24,12 +21,6 @@ router.get('/getEvents', function (req, res) {
         });
     });
 });
-
-// passport Strategy
-passport.use(new LdapStrategy(BASE_OPTS, function (user, callback) {
-    // if authenticate success, user is returned here
-    return callback(null, user);
-}));
 
 var userDefault = function (email) {
     var userDef = {

@@ -10,11 +10,6 @@ var settings = {
     databaseName: "LocalDB", // dcc_development, DCC2, DCC_test
 
     /**       
-    *---------- LDAP SERVER CONFIG ------------
-    */
-    LDAPurl: 'ldap://192.168.122.20:389', //192.168.122.23:389
-
-    /**       
     *---------- LOG CONFIG ------------
     */
     //choose date format

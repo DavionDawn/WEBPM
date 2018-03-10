@@ -25,7 +25,7 @@ module.exports =
             "dialect": "mysql",
             "username": "root",
             "password": "root",
-            "database": "dcc_test",
+            "database": "LocalDB",
             "host": "127.0.0.1",
             "storage": "test_database.sqlite",
             "pool": {
@@ -40,7 +40,7 @@ module.exports =
             "dialect": "mysql",
             "username": "root",
             "password": "root",
-            "database": "DCC2",
+            "database": "LocalDB",
             "host": "127.0.0.1",
             "pool": {
                 "max": 5,
@@ -49,18 +49,6 @@ module.exports =
             },
             port: 3306,
             "logging": false
-        },
-        "inMemoryDB": {
-            dialect: "sqlite",
-            storage: "test/IMDB/database.sqlite"
-        },
-        // LDAP server config , port 389
-        server: {
-            url: settings.LDAPurl,
-            bindDn: 'cn=admin,dc=example,dc=com',
-            bindCredentials: '123456',
-            searchBase: 'dc=example,dc=com',
-            searchFilter: '(mail={{username}})'
         },
         //Log config
         "log": require('simple-node-logger').createLogManager(logConfigOptions).createLogger()
