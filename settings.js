@@ -3,11 +3,11 @@ var settings = {
     /**       
     / ---------- DATABASE CONFIG ------------
     */
-    databaseHost: "127.0.0.1", //192.168.122.20
-    databasePort: 3306, //3306
+    databaseHost: "127.0.0.1",
+    databasePort: 3306,
     databaseUserName: "root", // root
-    databasePassword: "root", // dekvn@123321 or root
-    databaseName: "LocalDB", // dcc_development, DCC2, DCC_test
+    databasePassword: "root", // root
+    databaseName: "LocalDB", //
 
     /**       
     *---------- LOG CONFIG ------------
@@ -20,8 +20,6 @@ var settings = {
     /**       
     *---------- UNIT TESTING CONFIG ------------
     */
-    testDatabase: 'inMemoryDB', // In-memory Database
-
     /**       
     *---------- EMAIL CONFIG ------------
     */

@@ -54,36 +54,36 @@ h2 {
 .navbar-dcc {
     /*border-color: black;*/
     /*background-color: black;*/
-    background-color: #000a15;
+    background-color: #ffffff;
 }
 .navbar-dcc .navbar-brand {
-    color: #777;
+    color: #000000;
 }
 .navbar-dcc .navbar-brand:hover, .navbar-dcc .navbar-brand:focus {
-    color: #5e5e5e;
+    color: #ff0000;
     background-color: transparent;
 }
 .navbar-dcc .navbar-text {
-    color: #F8F8FF;
+    color: #4d4dff;
 }
 .navbar-dcc .navbar-name {
-    color: #F8F8FF;
+    color: #0000ff;
 }
 .navbar-dcc .navbar-nav> li> a {
-    color: #F8F8FF;
+    color: #4d4dff;
     font-size: 105%;
 }
 .navbar-dcc .navbar-nav> li> a:hover, .navbar-dcc .navbar-nav> li> a:focus {
-    color: #333;
+    color: #F2F2F2;
     border-radius: 50px;
-    background-color: #F8F8FF;
+    background-color: #0066ff;
 }
 .navbar-dcc .navbar-nav> .active> a, .navbar-dcc .navbar-nav> .active> a:hover, .navbar-dcc .navbar-nav> .active> a:focus {
-    color: #555;
-    background-color: #e7e7e7;
+    color: #F2F2F2;
+    background-color: #0066ff;
 }
 .navbar-dcc .navbar-nav> .disabled> a, .navbar-dcc .navbar-nav> .disabled> a:hover, .navbar-dcc .navbar-nav> .disabled> a:focus {
-    color: #ccc;
+    color: #0066ff;
     background-color: transparent;
 }
 .navbar-dcc .navbar-toggle {
@@ -141,7 +141,7 @@ h2 {
     }
 }
 
-/*************DCC Name****************/
+/*************Title Name****************/
 
 .navbar-name {
     float: left;
@@ -162,7 +162,7 @@ h2 {
     }
 }
 .navbar-dcc .navbar-name {
-    color: #f8f8f8;
+    color: #0000ff;
 }
 .navbar-dcc .navbar-name:hover {
 
