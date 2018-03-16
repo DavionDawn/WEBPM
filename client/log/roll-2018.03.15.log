@@ -1,0 +1,9 @@
+10:08:14.800 INFO  Post /login 
+10:16:19.480 INFO  Post /login 
+10:16:19.504 INFO  User login failed. 
+10:16:25.187 INFO  Post /login 
+10:16:25.195 INFO  User login failed. 
+10:18:27.277 INFO  Post /login 
+10:18:27.293 INFO  User login: tranhoangnam3108@gmail.com 
+10:18:50.220 INFO  GET /users/getUserInfo 
+11:00:11.832 INFO  GET /logout 

@@ -4,7 +4,6 @@ var gcal = require('../../config/google_api/gcal.js');
 var log = require('../../config/config')["log"];
 var Sequelize = require('sequelize');
 var models = require('../../models');
-var passport = require('passport');
 var BASE_OPTS = require("../../config/config");
 var md5 = require('md5');
 
@@ -44,13 +43,7 @@ var userDefault = function (email) {
 
 router.post('/login', function (req, res, next) {
     log.info('Post /login');
-    passport.authenticate('ldapauth', {
-        // using session to save user's credentials
-        session: true
-    }, function (err, user) {
-        // if user does not exist, login fail
-        if (!user) {
-            models.User.getUserByEmailAndPassword(req.body.username, md5(req.body.password), function (_user) {
+    models.User.getUserByEmailAndPassword(req.body.username, md5(req.body.password), function (_user) {
                 if (_user && _user.status !== 'deactivated') {
                     passport.serializeUser(function (_user, done) {
                         done(null, _user.email);
@@ -83,41 +76,6 @@ router.post('/login', function (req, res, next) {
                     });
                 }
             })
-
-        } else {
-            // save user's credentials to session
-            passport.serializeUser(function (user, done) {
-                done(null, user.mail);
-            });
-            // get user's credentials from session
-            passport.deserializeUser(function (email, callback) {
-                callback(null, {
-                    email: email
-                });
-            });
-
-            // else login success
-            return req.login(user, function () {
-                log.info('User login: ' + user.mail);
-                models.User.findOrCreate({
-                    where: { email: user.mail },
-                    defaults: userDefault(user.mail),
-                })
-                    .then(function (user) {
-                        var currentRole = user[0].dataValues.isAdmin ? 1 :
-                            user[0].dataValues.isTrainer ? 2 :
-                                user[0].dataValues.isTrainee ? 3 : 0;
-                        res.send({
-                            role: currentRole,
-                            data: user[0].dataValues,
-                            success: true,
-                            msg: 'You are authenticated!'
-
-                        });
-                    });
-            });
-        }
-    })(req, res, next);
 });
 
 router.get('/isLogin', function (req, res) {
