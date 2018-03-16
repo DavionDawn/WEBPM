@@ -1,0 +1,6 @@
+11:57:07.266 INFO  Post /login 
+12:00:07.729 INFO  Post /login 
+12:00:07.753 INFO  User login: tranhoangnam3108@gmail.com 
+12:00:19.200 INFO  GET /users/getUserInfo 
+12:00:21.336 INFO  GET /users/getUserInfo 
+12:00:26.384 INFO  GET /users/getUserInfo 

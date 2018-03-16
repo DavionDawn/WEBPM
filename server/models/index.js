@@ -18,13 +18,12 @@ fs
         var model = sequelize.import(path.join(__dirname, file));
         db[model.name] = model;
     });
-/* you might need this later
 Object.keys(db).forEach(function (modelName) {
     if ("associate" in db[modelName]) {
         db[modelName].associate(db);
     }
 });
-*/
+
 
 
 db.sequelize = sequelize;
@@ -58,4 +57,29 @@ db.User.hasMany(db.RequestOpening, { foreignKey: 'userId' });
 //association of table notification and user
 db.Notifications.belongsTo(db.User, { foreignKey: 'email' });
 db.User.hasMany(db.Notifications, { foreignKey: 'email' });
+/*
+//----------------------------------------------------------------//
+//---------------PM Database table associations-------------------//
+db.lines.belongsTo(db.plants, { foreignKey: 'plantid' });
+db.plants.hasMany(db.lines, { foreignKey: 'plantid' });
+
+db.machines.belongsTo(db.lines, { foreignKey: 'linesid' });
+db.lines.hasMany(db.machines, { foreignKey: 'lineid' });
+
+db.groups.belongsTo(db.machines, { foreignKey: 'machineid' });
+db.machines.hasMany(db.groups, { foreignKey: 'machineid' });
+
+db.parts.belongsTo(db.groups, { foreignKey: 'groupid' });
+db.groups.hasMany(db.parts, { foreignKey: 'groupid' });
+
+db.events.belongsTo(db.parts, { foreignKey: 'partid' });
+db.parts.hasMany(db.events, { foreignKey: 'partid' });
+
+db.events.belongsTo(db.eventtypes, { foreignKey: 'eventtypeid' });
+db.eventtypes.hasMany(db.events, { foreignKey: 'eventtypeid' });
+
+db.events.belongsTo(db.users, { foreignKey: 'userid' });
+db.users.hasMany(db.events, { foreignKey: 'userid' });
+//----------------------------------------------------------------//
+*/
 module.exports = db;

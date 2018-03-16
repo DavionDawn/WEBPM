@@ -4,6 +4,7 @@ var gcal = require('../../config/google_api/gcal.js');
 var log = require('../../config/config')["log"];
 var Sequelize = require('sequelize');
 var models = require('../../models');
+var passport = require('passport');
 var BASE_OPTS = require("../../config/config");
 var md5 = require('md5');
 
