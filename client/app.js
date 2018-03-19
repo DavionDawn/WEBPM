@@ -16,7 +16,11 @@ var myApp = angular.module('myApp', [
     'admin_dashboard',
     'EmployeesManagement',
     'register',
-    'notification'
+    'notification',
+    'HCL',
+    'PCL',
+    'ORAL',
+    'FOOD'
 ]);
 
 //Config phase
