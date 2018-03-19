@@ -57,29 +57,29 @@ db.User.hasMany(db.RequestOpening, { foreignKey: 'userId' });
 //association of table notification and user
 db.Notifications.belongsTo(db.User, { foreignKey: 'email' });
 db.User.hasMany(db.Notifications, { foreignKey: 'email' });
-/*
+
 //----------------------------------------------------------------//
 //---------------PM Database table associations-------------------//
-db.lines.belongsTo(db.plants, { foreignKey: 'plantid' });
-db.plants.hasMany(db.lines, { foreignKey: 'plantid' });
+db.Lines.belongsTo(db.Plants, { foreignKey: 'plantid' });
+db.Plants.hasMany(db.Lines, { foreignKey: 'plantid' });
 
-db.machines.belongsTo(db.lines, { foreignKey: 'linesid' });
-db.lines.hasMany(db.machines, { foreignKey: 'lineid' });
+db.Machines.belongsTo(db.Lines, { foreignKey: 'linesid' });
+db.Lines.hasMany(db.Machines, { foreignKey: 'lineid' });
 
-db.groups.belongsTo(db.machines, { foreignKey: 'machineid' });
-db.machines.hasMany(db.groups, { foreignKey: 'machineid' });
+db.Groups.belongsTo(db.Machines, { foreignKey: 'machineid' });
+db.Machines.hasMany(db.Groups, { foreignKey: 'machineid' });
 
-db.parts.belongsTo(db.groups, { foreignKey: 'groupid' });
-db.groups.hasMany(db.parts, { foreignKey: 'groupid' });
+db.Parts.belongsTo(db.Groups, { foreignKey: 'groupid' });
+db.Groups.hasMany(db.Parts, { foreignKey: 'groupid' });
 
-db.events.belongsTo(db.parts, { foreignKey: 'partid' });
-db.parts.hasMany(db.events, { foreignKey: 'partid' });
+db.Events.belongsTo(db.Parts, { foreignKey: 'partid' });
+db.Parts.hasMany(db.Events, { foreignKey: 'partid' });
 
-db.events.belongsTo(db.eventtypes, { foreignKey: 'eventtypeid' });
-db.eventtypes.hasMany(db.events, { foreignKey: 'eventtypeid' });
+db.Events.belongsTo(db.Eventtypes, { foreignKey: 'eventtypeid' });
+db.Eventtypes.hasMany(db.Events, { foreignKey: 'eventtypeid' });
 
-db.events.belongsTo(db.users, { foreignKey: 'userid' });
-db.users.hasMany(db.events, { foreignKey: 'userid' });
+db.Events.belongsTo(db.Users, { foreignKey: 'userid' });
+db.Users.hasMany(db.Events, { foreignKey: 'userid' });
 //----------------------------------------------------------------//
-*/
+
 module.exports = db;
